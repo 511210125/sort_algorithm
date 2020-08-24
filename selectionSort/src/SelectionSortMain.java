@@ -13,9 +13,10 @@ import java.util.Arrays;
  */
 public class SelectionSortMain {
     public static void main(String[] args) {
-        int[] arr = new int[80000];
+        int size = 80000;
+        int[] arr = new int[size];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * 80000);
+            arr[i] = (int) (Math.random() * size);
         }
         long startTime = System.currentTimeMillis();
         selectionSort(arr);

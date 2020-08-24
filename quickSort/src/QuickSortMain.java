@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 /**
  * message 快速排序
+ * 80000 消耗时间在 15-40ms之间,排序速度不稳定
  * __   __ ____            _  __
  * \ \ / /|_ _| __ __ ___ (_)| |
  * \ V /  | | | || |/ -_)| || |
@@ -10,17 +11,17 @@ import java.util.Arrays;
  */
 public class QuickSortMain {
     public static void main(String[] args) {
-        int arr[] = {1,3,2,4,5};
-//        int[] arr = new int[5];
-//        for (int i = 0; i < arr.length; i++) {
-//            arr[i] = (int) (Math.random() * 80000);
-//        }
+//        int arr[] = {1,3,2,4,5};
+        int size = 80000;
+        int[] arr = new int[size];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * size);
+        }
         long startTime = System.currentTimeMillis();
         quickSort(arr, 0, arr.length - 1);
         long endTime = System.currentTimeMillis();
         System.out.println("消耗时间:" + (endTime - startTime));
-
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
     }
 
     private static void quickSort(int[] arr, int left, int right) {
@@ -58,10 +59,10 @@ public class QuickSortMain {
         }
 
         //如果该数值被两个指针同时指向时,为了避免无限递归,需要缩小递归范围,该数值不参与递归
-//        if (l == r) {
-//            l++;
-//            r--;
-//        }
+        if (l == r) {
+            l++;
+            r--;
+        }
 
         if (left < r) {
             quickSort(arr,left,r);
