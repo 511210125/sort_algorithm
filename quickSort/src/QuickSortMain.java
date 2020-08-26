@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class QuickSortMain {
     public static void main(String[] args) {
 //        int arr[] = {1,3,2,4,5};
-        int size = 80000;
+        int size = 8000000;
         int[] arr = new int[size];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * size);

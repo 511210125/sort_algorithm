@@ -20,6 +20,9 @@ public class BubbleSortMain {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * size);
         }
+//        for (int i = 0; i < arr.length; i++) {
+//            arr[i] = i;
+//        }
         long startTime = System.currentTimeMillis();
         smartBubbleSort(arr);
         long endTime = System.currentTimeMillis();
@@ -49,7 +52,7 @@ public class BubbleSortMain {
     }
 
     /**
-     * 加强版
+     * 加强版,如果有一次排序已经未发生交换,则排序完成
      *
      * @param arr 要排序的数组
      */
